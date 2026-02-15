@@ -18,7 +18,7 @@
         .container {
             text-align: center;
             background: rgba(255, 255, 255, 0.1);
-            padding: 50px;
+            padding: 40px;
             border-radius: 25px;
             backdrop-filter: blur(15px);
             box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
@@ -26,14 +26,23 @@
             animation: fadeIn 2s ease;
         }
 
-        h1 {
-            font-size: 32px;
-            letter-spacing: 2px;
+        .photo {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
             margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(255,255,255,0.4);
+        }
+
+        h1 {
+            font-size: 28px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
         }
 
         p {
-            font-size: 18px;
+            font-size: 17px;
             line-height: 1.6;
         }
 
@@ -55,7 +64,6 @@
         }
 
         .open-btn {
-            margin-top: 20px;
             padding: 12px 25px;
             background: white;
             color: #1e1e2f;
@@ -72,25 +80,27 @@
 </head>
 <body>
 
-<audio id="bg-music" loop>
-    <source src="love.mp3" type="audio/mpeg">
+<audio id="bg-music" loop preload="auto">
+    <source src="./love.mp3" type="audio/mpeg">
 </audio>
 
 <div class="container" id="letter" style="display:none;">
+    
+    <img src="us.jpg" class="photo">
+
     <h1>Happy Valentine’s 🤍</h1>
     <p>
         HI NAALA GANDA,<br><br>
         yesterday when i was in tripla i was searching for present or gift but i didnt have time to find some and u came also so im very sorry,<br><br>
         BUT AY i wanna be different so this is mine :)<br><br>
-        SWAGG SWAGG<br><br> 
-        Thank you for the everything. You are the sweetest even tho im pissing u off so bad XD,Thank you because
-        i always see that u care for me. The card that u gave me yesterday it was so cute i cant stop smiling,
-        i cant believe that u are doing that because i thought u are nonchalant XD but thats fine.U are my nonchalant cutie
-    
-
-        
-
+        SWAGG SWAGG
     </p>
+
+    <p>
+        Thank you because i always see that u care for me. The card that u gave me yesterday it was so cute i cant stop smiling,
+        i cant believe that u are doing that because i thought u are nonchalant XD but thats fine. U are my nonchalant cutie.
+    </p>
+
     <div class="heart">🤍</div>
 </div>
 
@@ -102,11 +112,14 @@
 function openLetter() {
     document.getElementById("start-screen").style.display = "none";
     document.getElementById("letter").style.display = "block";
-    document.getElementById("bg-music").play();
+    
+    var music = document.getElementById("bg-music");
+    music.volume = 0.6;
+    music.play().catch(function(error){
+        console.log("Music play failed:", error);
+    });
 }
 </script>
 
 </body>
 </html>
-
-
