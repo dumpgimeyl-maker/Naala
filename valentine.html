@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For You 🤍</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #1e1e2f, #3a3a55);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Georgia', serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+            max-width: 500px;
+            animation: fadeIn 2s ease;
+        }
+
+        h1 {
+            font-size: 32px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .heart {
+            font-size: 28px;
+            margin-top: 20px;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(30px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        @keyframes float {
+            0% {transform: translateY(0px);}
+            50% {transform: translateY(-10px);}
+            100% {transform: translateY(0px);}
+        }
+
+        .open-btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: white;
+            color: #1e1e2f;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .open-btn:hover {
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<audio id="bg-music" loop>
+    <source src="love.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container" id="letter" style="display:none;">
+    <h1>Happy Valentine’s 🤍</h1>
+    <p>
+        HI NAALA GANDA,<br><br>
+        yesterday when i was in tripla i was searching for present or gift but i didnt have time to find some and u came also so im very sorry,<br><br>
+        BUT AY i wanna be different so this is mine :)<br><br>
+        SWAGG SWAGG<br><br> 
+        Thank you for the everything. You are the sweetest even tho im pissing u off so bad XD
+    </p>
+    <div class="heart">🤍</div>
+</div>
+
+<div id="start-screen">
+    <button class="open-btn" onclick="openLetter()">Open Your Surprise</button>
+</div>
+
+<script>
+function openLetter() {
+    document.getElementById("start-screen").style.display = "none";
+    document.getElementById("letter").style.display = "block";
+    document.getElementById("bg-music").play();
+}
+</script>
+
+</body>
+</html>
